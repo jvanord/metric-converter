@@ -75,6 +75,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
   Widget _landscapeView(context) => Center(
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _heading(true),
               Row(

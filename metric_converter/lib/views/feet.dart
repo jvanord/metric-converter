@@ -75,6 +75,7 @@ class _FeetWidgetState extends State<FeetWidget> {
   Widget _landscapeView(context) => Center(
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _heading(true),
               Row(

@@ -75,6 +75,7 @@ class _PoundsWidgetState extends State<PoundsWidget> {
   Widget _landscapeView(context) => Center(
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _heading(true),
               Row(

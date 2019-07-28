@@ -75,6 +75,7 @@ class _MilesWidgetState extends State<MilesWidget> {
   Widget _landscapeView(context) => Center(
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               _heading(true),
               Row(
