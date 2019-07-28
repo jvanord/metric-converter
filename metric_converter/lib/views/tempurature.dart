@@ -25,17 +25,18 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;
     return orientation == Orientation.landscape
-        ? _landscapeView()
-        : _portraitView();
+        ? _landscapeView(context)
+        : _portraitView(context);
   }
 
-  Widget _portraitView() => Center(
+  Widget _portraitView(BuildContext context) => Center(
         child: Container(
           padding: EdgeInsets.all(50),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _inputCart(),
+              _heading(false),
+              _inputCard(),
               Divider(),
               _outputCard(),
               _buttonBar(context)
@@ -44,9 +45,39 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
         ),
       );
 
-  Widget _landscapeView() => Center(child: Text('Landscape'));
+  Widget _landscapeView(context) => Center(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              _heading(true),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _inputCard(),
+                  Divider(),
+                  _outputCard(),
+                ],
+              ),
+              _buttonBar(context)
+            ],
+          ),
+        ),
+      );
 
-  Widget _inputCart() => Card(
+  Widget _heading(bool isLandscape) => Container(
+        child: Text(
+          'Temperature',
+          style: Theme.of(context).textTheme.display2,
+        ),
+        decoration: BoxDecoration(),
+        padding: EdgeInsets.symmetric(
+          horizontal: 20, 
+          vertical: isLandscape 
+            ? 20 
+            : 60),
+      );
+
+  Widget _inputCard() => Card(
         margin: EdgeInsets.all(20),
         child: Container(
           padding: EdgeInsets.all(20),
