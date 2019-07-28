@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/home.dart';
+import 'views/tabbed_home.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: MyHomePage(title: 'Metric Converter'),
+      home: TabbedHomeWidget(title: 'Metric Converter'),
     );
   }
 }

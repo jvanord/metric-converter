@@ -54,7 +54,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   _inputCard(),
-                  VerticalDivider(),
+                  VerticalDivider(width: 5),
                   _outputCard(),
                 ],
               ),
@@ -80,7 +80,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
   Widget _inputCard() => Card(
         margin: EdgeInsets.all(10),
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(10),
           child: Text(
             '$_farenheit \u00B0F',
@@ -92,7 +92,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
   Widget _outputCard() => Card(
         margin: EdgeInsets.all(10),
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(10),
           child: Text(
             '${_celsius.toStringAsFixed(2)} \u00B0C',
