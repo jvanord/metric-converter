@@ -8,13 +8,14 @@ class TabbedHomeWidget extends StatelessWidget{
   TabbedHomeWidget({Key key, this.title}) : super(key: key);
   final String title;
   Widget build(BuildContext context){
+    final isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
     return DefaultTabController(
         length: 4,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(text: 'Temperature'),
+                Tab(text: isLandscape ? 'Temperature' : 'Temp'),
                 Tab(text: 'Weight',),
                 Tab(text: 'Miles',),
                 Tab(text: 'Feet',),
