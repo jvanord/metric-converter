@@ -54,7 +54,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   _inputCard(),
-                  Divider(),
+                  VerticalDivider(),
                   _outputCard(),
                 ],
               ),
@@ -71,17 +71,17 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
         ),
         decoration: BoxDecoration(),
         padding: EdgeInsets.symmetric(
-          horizontal: 20, 
+          horizontal: 10, 
           vertical: isLandscape 
-            ? 20 
-            : 60),
+            ? 10 
+            : 30),
       );
 
   Widget _inputCard() => Card(
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.all(10),
         child: Container(
           padding: EdgeInsets.all(20),
-          margin: EdgeInsets.all(20),
+          margin: EdgeInsets.all(10),
           child: Text(
             '$_farenheit \u00B0F',
             style: Theme.of(context).textTheme.display1,
@@ -90,10 +90,10 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
       );
 
   Widget _outputCard() => Card(
-        margin: EdgeInsets.all(20),
+        margin: EdgeInsets.all(10),
         child: Container(
           padding: EdgeInsets.all(20),
-          margin: EdgeInsets.all(20),
+          margin: EdgeInsets.all(10),
           child: Text(
             '${_celsius.toStringAsFixed(2)} \u00B0C',
             style: Theme.of(context).textTheme.display1,
