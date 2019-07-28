@@ -9,6 +9,18 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
   double _farenheit = 70;
   double get _celsius => (_farenheit - 32) * 5 / 9;
 
+  void _onIncrement() {
+    setState(() {
+      _farenheit++;
+    });
+  }
+
+  void _onDecrement(){
+    setState(() {
+      _farenheit--;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -40,6 +52,30 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
                 ),
               ),
             ),
+            ButtonBar(
+              mainAxisSize: MainAxisSize.min,
+              alignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('+1'),
+                  color: Colors.teal,
+                  splashColor: Colors.tealAccent,
+                  textColor: Colors.white,
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(20.0)),
+                  onPressed: _onIncrement,
+                ),
+                RaisedButton(
+                  child: Text('-1'),
+                  color: Colors.teal,
+                  splashColor: Colors.tealAccent,
+                  textColor: Colors.white,
+                  shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(20.0)),
+                  onPressed: _onDecrement,
+                ),
+              ],
+            )
           ],
         ),
       ),
