@@ -55,6 +55,14 @@ class _MilesWidgetState extends State<MilesWidget> {
                 mainAxisSize: MainAxisSize.min,
                 alignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  _addOneButton(),
+                  _subtractOneButton(),
+                ],
+              ),
+              ButtonBar(
+                mainAxisSize: MainAxisSize.min,
+                alignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
                   _addTenButton(),
                   _subtractTenButton(),
                 ],

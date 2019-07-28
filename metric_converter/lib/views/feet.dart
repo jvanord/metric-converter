@@ -55,6 +55,14 @@ class _FeetWidgetState extends State<FeetWidget> {
                 mainAxisSize: MainAxisSize.min,
                 alignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  _addOneButton(),
+                  _subtractOneButton(),
+                ],
+              ),
+              ButtonBar(
+                mainAxisSize: MainAxisSize.min,
+                alignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
                   _addTenButton(),
                   _subtractTenButton(),
                 ],

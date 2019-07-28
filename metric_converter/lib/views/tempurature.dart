@@ -55,6 +55,14 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
                 mainAxisSize: MainAxisSize.min,
                 alignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  _addOneButton(),
+                  _subtractOneButton(),
+                ],
+              ),
+              ButtonBar(
+                mainAxisSize: MainAxisSize.min,
+                alignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
                   _addTenButton(),
                   _subtractTenButton(),
                 ],
