@@ -11,13 +11,25 @@ class _FeetWidgetState extends State<FeetWidget> {
 
   void _onIncrement() {
     setState(() {
-      _feet++;
+      if (_feet < 10000) _feet++;
+    });
+  }
+
+  void _onIncrement10() {
+    setState(() {
+      if (_feet < 9990) _feet += 10;
     });
   }
 
   void _onDecrement() {
     setState(() {
-      _feet--;
+      if (_feet > 0) _feet--;
+    });
+  }
+
+  void _onDecrement10() {
+    setState(() {
+      if (_feet > 9) _feet -= 10;
     });
   }
 
@@ -39,7 +51,14 @@ class _FeetWidgetState extends State<FeetWidget> {
               _inputCard(),
               Divider(),
               _outputCard(),
-              _buttonBar(context)
+              ButtonBar(
+                mainAxisSize: MainAxisSize.min,
+                alignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  _addTenButton(),
+                  _subtractTenButton(),
+                ],
+              ),
             ],
           ),
         ),
@@ -58,7 +77,16 @@ class _FeetWidgetState extends State<FeetWidget> {
                   _outputCard(),
                 ],
               ),
-              _buttonBar(context)
+              ButtonBar(
+                mainAxisSize: MainAxisSize.min,
+                alignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  _addTenButton(),
+                  _addOneButton(),
+                  _subtractOneButton(),
+                  _subtractTenButton(),
+                ],
+              ),
             ],
           ),
         ),
@@ -71,10 +99,7 @@ class _FeetWidgetState extends State<FeetWidget> {
         ),
         decoration: BoxDecoration(),
         padding: EdgeInsets.symmetric(
-          horizontal: 10, 
-          vertical: isLandscape 
-            ? 10 
-            : 30),
+            horizontal: 10, vertical: isLandscape ? 10 : 30),
       );
 
   Widget _inputCard() => Card(
@@ -101,28 +126,41 @@ class _FeetWidgetState extends State<FeetWidget> {
         ),
       );
 
-  Widget _buttonBar(BuildContext context) => ButtonBar(
-        mainAxisSize: MainAxisSize.min,
-        alignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          RaisedButton(
-            child: Text('+1'),
-            color: Theme.of(context).accentColor,
-            splashColor: Theme.of(context).splashColor,
-            textColor: Colors.white,
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(20.0)),
-            onPressed: _onIncrement,
-          ),
-          RaisedButton(
-            child: Text('-1'),
-            color: Theme.of(context).accentColor,
-            splashColor: Theme.of(context).splashColor,
-            textColor: Colors.white,
-            shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(20.0)),
-            onPressed: _onDecrement,
-          ),
-        ],
+  Widget _addOneButton() => RaisedButton(
+        child: Text('+1'),
+        color: Theme.of(context).accentColor,
+        splashColor: Theme.of(context).splashColor,
+        textColor: Colors.white,
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(20.0)),
+        onPressed: _onIncrement,
+      );
+  Widget _addTenButton() => RaisedButton(
+        child: Text('+10'),
+        color: Theme.of(context).accentColor,
+        splashColor: Theme.of(context).splashColor,
+        textColor: Colors.white,
+        padding: EdgeInsets.all(0),
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(20.0)),
+        onPressed: _onIncrement10,
+      );
+  Widget _subtractOneButton() => RaisedButton(
+        child: Text('-1'),
+        color: Theme.of(context).accentColor,
+        splashColor: Theme.of(context).splashColor,
+        textColor: Colors.white,
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(20.0)),
+        onPressed: _onDecrement,
+      );
+  Widget _subtractTenButton() => RaisedButton(
+        child: Text('-10'),
+        color: Theme.of(context).accentColor,
+        splashColor: Theme.of(context).splashColor,
+        textColor: Colors.white,
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(20.0)),
+        onPressed: _onDecrement10,
       );
 }
