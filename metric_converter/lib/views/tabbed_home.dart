@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metric_converter/views/miles.dart';
+import 'package:metric_converter/views/pounds.dart';
 import 'package:metric_converter/views/tempurature.dart';
 
 class TabbedHomeWidget extends StatelessWidget{
@@ -23,7 +24,7 @@ class TabbedHomeWidget extends StatelessWidget{
           body: TabBarView(
             children: [
               TemperatureWidget(),
-              Center(child:Text('Weight', style: Theme.of(context).textTheme.display2)),
+              PoundsWidget(),
               MilesWidget(),
               Center(child:Text('Short Distance', style: Theme.of(context).textTheme.display2)),
             ],
