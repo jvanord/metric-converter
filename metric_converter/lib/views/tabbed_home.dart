@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metric_converter/views/feet.dart';
+import 'package:metric_converter/views/inches.dart';
 import 'package:metric_converter/views/miles.dart';
 import 'package:metric_converter/views/pounds.dart';
 import 'package:metric_converter/views/tempurature.dart';
@@ -9,15 +10,16 @@ class TabbedHomeWidget extends StatelessWidget{
   final String title;
   Widget build(BuildContext context){
     return DefaultTabController(
-        length: 4,
+        length: 5,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(text: 'Degrees'),
-                Tab(text: 'Pounds',),
-                Tab(text: 'Miles',),
-                Tab(text: 'Feet',),
+                Tab(text: '\u00B0C'),
+                Tab(text: 'kg',),
+                Tab(text: 'km',),
+                Tab(text: 'm',),
+                Tab(text: 'cm',),
               ],
             ),
             title: Text(title),
@@ -28,6 +30,7 @@ class TabbedHomeWidget extends StatelessWidget{
               PoundsWidget(),
               MilesWidget(),
               FeetWidget(),
+              InchesWidget(),
             ],
           ),
         ),
