@@ -7,11 +7,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Metric Converter',
+      title: 'Quick-Metric',
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: TabbedHomeWidget(title: 'Metric Converter'),
+      home: TabbedHomeWidget(title: 'Quick-Metric'),
     );
   }
 }
