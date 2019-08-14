@@ -35,19 +35,21 @@ class _MilesWidgetState extends State<MilesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final orientation = MediaQuery.of(context).orientation;
-    return orientation == Orientation.landscape
-        ? _landscapeView(context)
-        : _portraitView(context);
+    final mq = MediaQuery.of(context);
+    return mq.orientation == Orientation.landscape
+        ? _landscapeView(context, mq.size)
+        : _portraitView(context, mq.size);
   }
 
-  Widget _portraitView(BuildContext context) => Center(
+  Widget _portraitView(BuildContext context, Size mediaSize) => Center(
         child: Container(
-          padding: EdgeInsets.all(50),
+          padding: EdgeInsets.symmetric(
+              vertical: mediaSize.height / 20,
+              horizontal: mediaSize.width / 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _heading(false),
+              _heading(false, mediaSize.height),
               _inputCard(),
               Divider(),
               _outputCard(),
@@ -72,12 +74,12 @@ class _MilesWidgetState extends State<MilesWidget> {
         ),
       );
 
-  Widget _landscapeView(context) => Center(
+  Widget _landscapeView(context, Size mediaSize) => Center(
         child: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              _heading(true),
+              _heading(true, mediaSize.height),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -101,14 +103,19 @@ class _MilesWidgetState extends State<MilesWidget> {
         ),
       );
 
-  Widget _heading(bool isLandscape) => Container(
-        child: Text(
-          'Long Distance',
-          style: Theme.of(context).textTheme.display2,
+  Widget _heading(bool isLandscape, double height) => Container(
+        child: Visibility(
+          visible: height > 640,
+          child: Text(
+            'Kilometers',
+            style: Theme.of(context).textTheme.display2,
+          ),
         ),
         decoration: BoxDecoration(),
         padding: EdgeInsets.symmetric(
-            horizontal: 10, vertical: isLandscape ? 10 : 30),
+          horizontal: 10,
+          vertical: 0,
+        ),
       );
 
   Widget _inputCard() => Card(

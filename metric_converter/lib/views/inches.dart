@@ -43,7 +43,9 @@ class _InchesWidgetState extends State<InchesWidget> {
 
   Widget _portraitView(BuildContext context, Size mediaSize) => Center(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: mediaSize.height / 20, horizontal: mediaSize.width / 20),
+          padding: EdgeInsets.symmetric(
+              vertical: mediaSize.height / 20,
+              horizontal: mediaSize.width / 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -105,13 +107,13 @@ class _InchesWidgetState extends State<InchesWidget> {
         child: Visibility(
           visible: height > 640,
           child: Text(
-            '$height', // 'Centimeters'
-            style: Theme.of(context).textTheme.display2, 
+            'Centimeters',
+            style: Theme.of(context).textTheme.display2,
           ),
         ),
         decoration: BoxDecoration(),
         padding: EdgeInsets.symmetric(
-          horizontal: 10, 
+          horizontal: 10,
           vertical: 0,
         ),
       );
