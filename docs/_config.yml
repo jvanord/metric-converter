@@ -1,3 +1,6 @@
 theme: jekyll-theme-cayman
-title: Quick-Metric .&trade;
+title: Quick-Metric&trade;
 description: The quickest and easiest way to get a metric value from an imperial value.
+navbar-links:
+  Terms and Conditions: "terms"
+  Privacy Policy: "privacy"
