@@ -10,3 +10,7 @@ TODO: Add screenshots
 ## Available
 
 On the Apple App Store&reg; and coming soon to the Google Play Store&reg;.
+
+## Terms 
+
+View our [Terms and Conditions](terms) or [Privacy Policy](privacy).
