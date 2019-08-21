@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: TabbedHomeWidget(title: 'Quick-Metric'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

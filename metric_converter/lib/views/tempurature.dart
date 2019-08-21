@@ -109,6 +109,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
           child: Text(
             '\u00B0Celsius',
             style: Theme.of(context).textTheme.display2,
+            key: Key('heading_text'),
           ),
         ),
         decoration: BoxDecoration(),
@@ -126,6 +127,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
           child: Text(
             '$_farenheit \u00B0F',
             style: Theme.of(context).textTheme.display1,
+            key: Key('input_text'),
           ),
         ),
       );
@@ -138,6 +140,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
           child: Text(
             '${_celsius.toStringAsFixed(2)} \u00B0C',
             style: Theme.of(context).textTheme.display1,
+            key: Key('output_text'),
           ),
         ),
       );
